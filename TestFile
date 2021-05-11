@@ -1,3 +1,20 @@
-测试文件
-无内容
-tttt
+fo = open('C:/Users/王戍斌/Desktop/111.txt','r')
+file = open('C:/Users/王戍斌/Desktop/处理数据.txt','w')
+list = []
+str = ''
+line = '1'
+while( line != ''):
+    line = fo.readline()
+    for data in line:
+        if((data == ' ') | (data == '\n')):
+            list.append(str)
+            str = ''
+        else:
+            str = str + data
+    # print(list[:len(list)-4])
+    for str2 in list[:len(list)-4]:
+        file.write(str2)
+        file.write(' ')
+    file.write('\n')
+    # file.write(list[:len(list)-4])
+    list.clear()
